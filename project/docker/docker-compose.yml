@@ -1,0 +1,21 @@
+version: '3.8'
+
+services:
+  app:
+    restart: on-failure
+    build:
+      context: ..
+      dockerfile: Dockerfile.app
+    ports:
+      - "8080:8080"
+    depends_on:
+      - db
+  db:
+    build:
+      context: ..
+      dockerfile: Dockerfile.db
+    environment:
+      MYSQL_DATABASE: javaschema
+      MYSQL_ROOT_PASSWORD: M04_ZOR_alex
+      MYSQL_USERNAME: root
+      MYSQL_PASSWORD: M04_ZOR_alex

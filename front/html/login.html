@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Optical House</title>
+    <link rel = "stylesheet" href="/css/main.css">
+</head>
+<body>
+<div th:if="${param.error}">
+    Invalid username and password.
+</div>
+<div th:if="${param.logout}">
+    You have been logged out.
+</div>
+<form id = "loginForm" action="../action_page.php" class="form-container" th:action="@{/login}" method="post">
+    <h1>Вход</h1>
+
+    <label for="email"><b>Почта</b></label>
+    <input type="email" placeholder="Ваша почта" name="username" id="email" required checked>
+
+    <label for="psw"><b>Пароль</b></label>
+    <input type="password" placeholder="Ваш пароль" name="password" id="psw" required>
+
+    <button type="button" onclick="authorization()" class="btn">Вход</button>
+    <a href="/"><button type="button" class="btn cancel"> Закрыть</button></a>
+
+    <p>Нет профиля на нашем сайте</p>
+    <p class="reg"><a href="/regist"
+                      target = "_blank">Зарегистрироваться</a></p>
+</form>
+<script src="/js/script.js"></script>
+</body>
+</html>

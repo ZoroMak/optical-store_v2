@@ -1,0 +1,106 @@
+version: "3.8"
+
+services:
+  front:
+    build: ./front
+    ports:
+      - '8084:8084'
+    depends_on:
+      - main_back
+      - websocket
+    networks:
+      - main_net
+
+  mysqldb:
+    container_name: mysqldb
+    build:
+      context: ./project/docker
+      dockerfile: Dockerfile.db
+    environment:
+      MYSQL_DATABASE: javaschema
+      MYSQL_ROOT_PASSWORD: 1234
+      MYSQL_USERNAME: root
+      MYSQL_PASSWORD: 1234
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost"]
+      interval: 10s
+      timeout: 5s
+      retries: 3
+    networks:
+      - mysqldb_net
+
+  main_back:
+    container_name: mainBack
+    build:
+      context: ./project
+      dockerfile: Dockerfile.app
+    environment:
+      MYSQL_HOST: mysqldb
+      MYSQL_PORT: 3306
+      MYSQL_DATABASE: javaschema
+      MYSQL_ROOT_PASSWORD: 1234
+      MYSQL_USERNAME: root
+      MYSQL_PASSWORD: 1234
+    ports:
+      - '8080:8080'
+      - '5006:5006'
+    depends_on:
+      mysqldb:
+        condition: service_healthy
+    networks:
+      - main_net
+      - mysqldb_net
+
+  mongodb:
+    image: mongo
+    container_name: mongodb
+    expose:
+      - 27017
+    healthcheck:
+      test: ["CMD", "mongosh", "--eval", "db.adminCommand('ping')"]
+      interval: 10s
+      timeout: 5s
+      retries: 3
+    networks:
+      - mongodb_net
+
+  websocket:
+    container_name: websocketBack
+    build: ./websocket
+    environment:
+      - HOST=mongodb
+      - PORT=27017
+      - USER=root
+      - PASS=123456
+      - DB=chat_app
+      - SERVER_PORT=8088
+      - AUTH_URL=http://mainBack:8080/checkToken
+    ports:
+      - '8088:8088'
+      - '5005:5005'
+    depends_on:
+      mongodb:
+        condition: service_healthy
+    networks:
+      - main_net
+      - mongodb_net
+
+  ubuntu:
+    image: ubuntu
+    container_name: ubuntu
+    tty: true
+    expose:
+      - 8089
+    ports:
+      - '8089:8089'
+    networks:
+      - main_net
+
+
+networks:
+  main_net:
+    name: main_net
+  mysqldb_net:
+    name: mysqldb_net
+  mongodb_net:
+    name: mongodb_net

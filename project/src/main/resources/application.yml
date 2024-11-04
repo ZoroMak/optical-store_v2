@@ -1,0 +1,10 @@
+sent:
+  from:
+    store:
+      login: zorov.ma@mail.ru
+      password: fzcajf6HS4FPxghFgvEp
+
+datasource:
+  url: jdbc:mysql://localhost:3306/javaschema
+  login: root
+  password: M04_ZOR_alex

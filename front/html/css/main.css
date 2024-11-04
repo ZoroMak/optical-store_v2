@@ -1,0 +1,733 @@
+@import url('https://fonts.googleapis.com/css2?family=Niconne&display=swap');
+*{
+    -webkit-tap-highlight-color: transparent;
+}
+
+/*Стилизация шапки*/
+.header{
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 50;
+    position: fixed;
+}
+
+.header:before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 70px;
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 1);
+    background-color: #7e619c;
+}
+
+.header_body{
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 70px;
+}
+
+.header_list{
+    display: flex;
+    align-items: center;
+    padding-bottom: 15px;
+}
+
+.header_list li{
+    list-style: none;
+    margin: 0px 0px 0px 20px;
+}
+
+.header_list li a{
+    text-decoration: none;
+    opacity: 0.7;
+    transition: all .1s ease-in-out;
+    color: #ffffff;
+}
+
+.header_list li a:hover{
+    opacity: 1;
+}
+
+.header_list li .enter_button{
+    opacity: 0.7;
+    transition: all .1s ease-in-out;
+    border: none;
+    cursor: pointer;
+    font-family: Verdana, Helvetica, Arial, sans-serif;
+    color: #ffffff;
+    background-color: rgb(255, 140, 0);
+    height: 36px;
+    border-radius: 15%;
+}
+
+.header_list li .enter_button:hover{
+    opacity: 1;
+}
+
+.navbar-brand{
+    font-size: 20px;
+    text-decoration: none;
+    color: #ffffff;
+    padding-left: 20px;
+    padding-bottom: 30px;
+    z-index: 3;
+}
+
+.navbar-brand:hover{
+    color: #464196;
+
+}
+
+/*Стилизвция главной части страницы*/
+body {
+    margin-top: 70px;
+    font-family: Verdana, Helvetica, Arial, sans-serif;
+    color:#7e619c;
+}
+main{
+    padding: 0 15%;
+}
+
+.Add{
+    margin: 10px 0;
+    padding-top: 10px;
+    width: 100%;
+}
+
+.Main{
+    display: flex;
+}
+
+.Catalog{
+    background-color: #7e619c;
+    width: 30%;
+    height: auto;
+    color: #ffffff;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 1);
+}
+
+#First{
+    padding-top: 10px;
+    text-align: center;
+}
+
+#list{
+    padding-inline-start: 10px;
+}
+
+.Catalog ul li{
+    text-decoration: none;
+    list-style: none;
+    margin: 10px 0;
+    padding: 10px;
+    font-size: 20px;
+}
+
+/*Строка поиска товаров*/
+.search{
+    display: flex;
+    justify-content: space-around;
+    margin-left: 20px;
+}
+.search:after {content:""; clear:both; display:table}
+.search form {
+    width: 100%;
+    float: right;
+    position: relative;
+    margin-left: 20px;
+}
+.search input {
+    width: 96%;
+    height: 42px;
+    padding-left: 15px;
+    border-radius: 42px;
+    border: 2px solid  #800080;
+    outline: none;
+    transition: .3s linear;
+}
+.search form button {
+    width: 42px;
+    height: 42px;
+    background: none;
+    border: none;
+    position: absolute;
+    top: 5px;
+    right: 2%;
+    cursor: pointer;
+}
+
+.search button img{
+    width: 25px;
+}
+/*Конец настройки поиска
+Поле сортировки товаров*/
+#typeSorting{
+    padding-left: 20px;
+    border-radius: 42px;
+}
+
+.Products ul{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.Products ul li{
+    list-style: none;
+    padding: 0px 50px 30px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    margin: 5px;
+    position: relative;
+    overflow: hidden;
+    white-space: normal;
+    transition: all 0.3s ease 0s;
+    height: 250px;
+}
+
+.Products ul li .Inform{
+    position: absolute;
+    bottom: -50%;
+    transition: all 0.3s ease 0s;
+    padding-right: 5px;
+    width: 70%;
+}
+
+.Products ul li p{
+    margin-bottom: auto;
+}
+
+.buy{
+    background: linear-gradient(to right, #800080, #ffc0cb);
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    border-radius: 10px;
+    border: none;
+}
+
+.Products ul li .toy{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 10px;
+}
+
+.Products ul li .toy img{
+    width: 20px;
+    height: auto;
+}
+
+.Products ul li:hover{
+    bottom: 0;
+    transform: scale(1.2);
+    z-index: 2;
+    background-color: #fff;
+}
+
+.Products ul li:hover .Inform{
+    bottom: 0;
+}
+
+footer{
+    border-top: solid;
+    border-width: 5px;
+}
+
+address{
+    display: flex;
+    justify-content: center;
+}
+
+.connect{
+    padding-right: 100px;
+}
+
+.connect p{
+    padding-bottom: 20px;
+}
+
+.connect p a{
+    text-decoration: none;
+    opacity: 0.7;
+    transition: all .1s ease-in-out;
+    color: #7e619c;
+}
+
+.item:hover{
+    opacity: 0.9;
+}
+
+
+.list{
+    width: 100%;
+    text-align: justify;
+
+}
+
+.list ul li{
+    text-decoration: none;
+    padding-left: 30px;
+    margin: 50px;
+    display:inline-block;
+}
+
+.Especiallyforyou{
+    background-color: #7e619c;
+    border-radius: 10px;
+    height: 450px;
+    margin: 50px 0;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 1);
+    position: relative;
+}
+
+.Especiallyforyou h1{
+    color: #fff;
+    margin-left: 10px;
+    padding-top: 10px;
+}
+
+.species{
+    position: absolute;
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+    list-style: none;
+    overflow-x: scroll;
+    width: 90%;
+    left: 50%;
+    transform: translate(-50%);
+    padding-inline-start: 0;
+}
+
+.species::-webkit-scrollbar {
+    display: none;
+}
+
+.species li{
+    display: flex;
+    flex-direction: column;
+    width: 250px;
+    background-color: #fff;
+    border-radius: 10px;
+    margin-right: 30px;
+    padding: 5px;
+}
+
+.species li #Price{
+    width: 250px;
+}
+
+.species li #Price .buy{
+    color: #fff;
+    font-size: 16px;
+    width: 60%;
+}
+
+/* Кнопка, используемая для открытия контактной формы */
+
+/* Всплывающая форма-скрыта по умолчанию */
+.form-popup {
+    display: none;
+    position: fixed;
+    left: calc(50% - 280px/2);
+    top: 25%;
+    border: 3px solid #f1f1f1;
+    z-index: 5;
+    height: 50 vh;
+}
+
+.overlay{
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #000;
+    opacity: 0.8;
+    z-index: -1;
+}
+
+/* Добавление стилей в контейнер форм */
+.form-container {
+    max-width: 300px;
+    padding: 10px;
+    background-color: white;
+    border-radius: 10px;
+    margin-left: auto;
+    margin-right: auto;
+}
+/* Поля ввода полной ширины */
+.form-container input[type=email], .form-container input[type=password] {
+    width: 80%;
+    padding: 13px;
+    margin: 5px 0 22px 0;
+    border: none;
+    background: #f1f1f1;
+}
+
+/* Когда входы получают фокус, сделайте что-нибудь */
+.form-container input[type=email]:focus, .form-container input[type=password]:focus {
+    background-color: #ddd;
+    outline: none;
+}
+
+/* Установите стиль для кнопки отправить/кнопка */
+.form-container .btn {
+    background-color: #4CAF50;
+    color: white;
+    padding: 16px 20px;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    margin-bottom:10px;
+    opacity: 0.8;
+    border-radius: 10px;
+}
+
+/* Добавьте красный цвет фона к кнопке отмена */
+.form-container .cancel {
+    background-color: red;
+    border-radius: 10px;
+}
+
+/* Добавьте некоторые эффекты наведения на кнопки */
+.form-container .btn:hover, .open-button:hover {
+    opacity: 1;
+}
+
+.form-popup p{
+    text-align: center;
+    font-size: small;
+}
+
+.form-popup .reg{
+    text-align: center;
+    font-size: large;
+    background-color: grey;
+    margin: 5px;
+    padding: 3px;
+    border-radius: 16px;
+    color: rgb(72, 71, 71);
+    opacity: 0.7;
+}
+
+.form-popup .reg:hover{
+    opacity: 1;
+    cursor: pointer;
+}
+
+.inform{
+    display: block;
+    margin-top: 10px;
+}
+
+input::placeholder{
+    color: #553c9a;
+    opacity: 0.7;
+}
+
+input::-webkit-input-placeholder       {text-indent: 0px;   transition: text-indent 0.5s ease;}
+input::-moz-placeholder                {text-indent: 0px;   transition: text-indent 0.5s ease;}
+input:-moz-placeholder                 {text-indent: 0px;   transition: text-indent 0.5s ease;}
+input:-ms-input-placeholder            {text-indent: 0px;   transition: text-indent 0.5s ease;}
+input:focus::-webkit-input-placeholder {text-indent: 900px; transition: text-indent 0.5s ease;}
+input:focus::-moz-placeholder          {text-indent: 500px; transition: text-indent 0.5s ease;}
+input:focus:-moz-placeholder           {text-indent: 500px; transition: text-indent 0.5s ease;}
+input:focus:-ms-input-placeholder      {text-indent: 500px; transition: text-indent 0.5s ease;}
+
+iframe{
+    margin: 10px;
+    width: 600px;
+    height: 450px;
+}
+
+/*Кнопки соцсетей в футуре*/
+
+.socialNetwork{
+    list-style: none;
+    width: 300px;
+    display: flex;
+    justify-content: space-between;
+    padding-inline-start: 0px;
+}
+
+.socialNetwork .openNetwork{
+    border-radius: 30px;
+    border-width: 1px;
+    background-color: #fff;
+    overflow: hidden;
+    position: relative;
+    cursor: pointer;
+}
+
+.socialNetwork .openNetwork::after{
+    content: '';
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, #6a3093, #a044ff);
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: translateY(-100%);
+    transition: all 0.8s ease;
+}
+
+.socialNetwork .openNetwork:hover::after{
+    transform: translateY(0);
+}
+
+.socialNetwork .openNetwork .PNG{
+    position: relative;
+    padding: 5px;
+    z-index: 2;
+}
+
+.socialNetwork .openNetwork:hover .PNG{
+    filter: invert();
+}
+
+.count{
+    width: 350px;
+    margin-right: 10px;
+    display: flex; align-items: center; justify-content: center;
+}
+
+@media only screen and (max-width: 1200px){
+    .Main{
+        flex-direction: column;
+    }
+
+    .Catalog{
+        width: 100%;
+        height: 150px;
+        border-radius: 5px;
+    }
+
+    .Catalog #list{
+        display: flex;
+        overflow-x: scroll;
+        width: 100%;
+        height: 60px;
+        padding-inline-start: 0px;
+    }
+
+    .Catalog ul li{
+        font-size: 14px;
+        margin: 0px 20px 0px 0px;
+    }
+
+    .search{
+        margin-left: 0;
+        margin-top: 10px;
+    }
+
+    .search form {
+        margin-left: 5px;
+    }
+
+    #typeSorting{
+        padding-left: 5px;
+    }
+
+    .Products ul{
+        padding-inline-start: 0;
+    }
+
+    .Products ul li .Inform{
+        position: absolute;
+        bottom: 0;
+        padding-right: 5px;
+    }
+
+    footer address{
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .form-container {
+        max-width: 250px;
+        left: calc(50% - 200px/2);
+    }
+
+    .socialNetwork .openNetwork{
+        background: linear-gradient(to bottom, #6a3093, #a044ff);
+    }
+
+    .socialNetwork .openNetwork .PNG{
+        filter: invert();
+    }
+}
+
+@media only screen and (max-width: 768px){
+
+    .lock{
+        overflow: hidden;
+    }
+
+    .header_burger{
+        display: block;
+        position: relative;
+        width: 30px;
+        height: 20px;
+        z-index: 3;
+        right: 10px;
+    }
+
+    .header_burger span{
+        position: absolute;
+        background-color: #ffffff;
+        left: 0;
+        width: 100%;
+        height: 2px;
+        top: 9px;
+    }
+
+    .header_burger::before,
+    .header_burger::after{
+        content: '';
+        background-color: #ffffff;
+        position: absolute;
+        width: 100%;
+        height: 2px;
+        left: 0;
+        transition: all 0.3s ease 0s;
+    }
+
+    .header_burger::before{
+        top: 0px;
+    }
+
+    .header_burger::after{
+        bottom: 0px;
+    }
+
+    .header_burger.active::before{
+        top: 9px;
+        transform: rotate(45deg);
+    }
+
+    .header_burger.active::after{
+        bottom:9px;
+        transform: rotate(-45deg);
+    }
+
+    .header_burger.active span{
+        visibility: hidden;
+    }
+
+    .header_menu{
+        position: fixed;
+        top: -100%;
+        left: 0;
+        width: 100%;
+        height: auto;
+        background-color: rgb(188, 77, 160);
+        padding-top: 50px;
+        transition: all 0.3s ease 0s;
+    }
+
+    .header_menu.active{
+        top: 0;
+    }
+
+    .header_list{
+        display: block;
+        left: 0;
+    }
+
+    .header_list li{
+        font-size: 16px;
+        list-style: none;
+        margin: 0px 0px 20px 0px;
+    }
+
+    .header_list li a{
+        opacity: 1;
+    }
+
+    .header:before{
+        height: 40px;
+        z-index: 2;
+    }
+
+    .navbar-brand{
+        padding-bottom: 10px;
+        z-index: 3;
+    }
+
+    body{
+        margin-top: 40px;
+    }
+
+    .header_body{
+        height: 40px;
+    }
+
+    .Main{
+        flex-direction: column;
+    }
+
+    main{
+        padding: 0;
+    }
+
+    .search form {
+        margin-left: 3px;
+    }
+
+    #typeSorting{
+        padding-left: 2px;
+    }
+
+    #typeSorting{
+        padding-left: 5px;
+    }
+
+    .Products ul{
+        padding-inline-start: 0px;
+    }
+
+    .Products ul li{
+        padding: 0px 40px 30px;
+        width: 150px;
+    }
+
+    .Products ul li img{
+        width: 125px;
+        height: 125px;
+    }
+
+    iframe{
+        width: 200px;
+        height: 200px;
+    }
+}
+
+@media only screen and (max-width: 490px){
+
+    .Catalog #First{
+        font-size: 20px;
+    }
+
+    .Products ul li{
+        height: 225px;
+    }
+
+    .Products ul li img{
+        width: 120px;
+        height: 120px;
+    }
+
+    .connect {
+        padding-right: 0px;
+    }
+}
+
+@media only screen and (max-width: 320px){
+}

@@ -1,0 +1,13 @@
+spring:
+  data:
+    mongodb:
+      host: ${HOST:localhost}
+      port: 27017
+      database: ${DB:chat_up}
+
+server:
+  port: ${SERVER_PORT:8088}
+
+main:
+  auth:
+    url: ${AUTH_URL:http://localhost:8080/checkToken}
